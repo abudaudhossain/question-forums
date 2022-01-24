@@ -115,7 +115,7 @@
     <!-- ==========end all question sections ===========  -->
     <!-- ==========start footer sections ===========  -->
     <footer class="text-center m-auto py-4">
-        <span>All Rights &copy; Abu Daud Hossain</span>
+        <span>Abu Daud Hossain &copy;copyright</span>
     </footer>
     <!-- ==========end footer sections ===========  -->
     <!-- ==========start menu sections ===========  -->

@@ -63,6 +63,38 @@
             </div>
 
            
+            <div class="row">
+                <div class="col">
+                    <div class="card  my-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam quod quas ut delectus recusandae optio voluptas possimus pariatur fugit aliquid asperiores sed odio, a corporis incidunt maxime nihil, commodi quae?
+                            </p>
+                            <a href="/my_work_dir/php-crud-project/details.php?adat" class="btn btn-primary">Details</a>
+                            <button class="btn btn-primary">Update</button>
+                            <button class="btn btn-primary">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="row">
+                <div class="col">
+                    <div class="card  my-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam quod quas ut delectus recusandae optio voluptas possimus pariatur fugit aliquid asperiores sed odio, a corporis incidunt maxime nihil, commodi quae?
+                            </p>
+                            <a href="/my_work_dir/php-crud-project/details.php?adat" class="btn btn-primary">Details</a>
+                            <button class="btn btn-primary">Update</button>
+                            <button class="btn btn-primary">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
         </div>
     </section>
     <!-- ==========end all question sections ===========  -->

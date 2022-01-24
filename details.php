@@ -52,17 +52,49 @@
                     <div class="card  my-4">
                         <div class="card-body mb-4">
                             <h5 class="card-title">Card title</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                            <p class="card-text">
+                                With supporting text below as a natural lead-in to additional content.
                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam quod quas ut delectus
                                 recusandae optio voluptas possimus pariatur fugit aliquid asperiores sed odio, a
                                 corporis incidunt maxime nihil, commodi quae?
+                                With supporting text below as a natural lead-in to additional content.
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam quod quas ut delectus
+                                recusandae optio voluptas possimus pariatur fugit aliquid asperiores sed odio, a
+                                corporis incidunt maxime nihil, commodi quae?
+
+
+                            </p>
+                            <p class="card-text">
+                                With supporting text below as a natural lead-in to additional content.
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam quod quas ut delectus
+                                recusandae optio voluptas possimus pariatur fugit aliquid asperiores sed odio, a
+                                corporis incidunt maxime nihil, commodi quae?
+
+                                With supporting text below as a natural lead-in to additional content.
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam quod quas ut delectus
+                                recusandae optio voluptas possimus pariatur fugit aliquid asperiores sed odio, a
+                                corporis incidunt maxime nihil, commodi quae?
+
+                            </p>
+                            <p class="card-text">
+                                With supporting text below as a natural lead-in to additional content.
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam quod quas ut delectus
+                                recusandae optio voluptas possimus pariatur fugit aliquid asperiores sed odio, a
+
+                                corporis incidunt maxime nihil, commodi quae?
+                                With supporting text below as a natural lead-in to additional content.
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam quod quas ut delectus
+                                recusandae optio voluptas possimus pariatur fugit aliquid asperiores sed odio, a
+                                corporis incidunt maxime nihil, commodi quae?
+
                             </p>
 
                         </div>
-
+                        <h3 class="m-3">Comments</h3>
                         <div class="card  ms-5 me-3 mb-2">
+
                             <div class="card-body">
-                            <h6 class="card-title">User Name</h6>
+                                <h6 class="card-title">User Name</h6>
                                 <p class="card-text">With supporting text below as a natural lead-in to additional
                                     content.
                                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam quod quas ut
@@ -75,7 +107,7 @@
                         </div>
                         <div class="card  ms-5 me-3 mb-2">
                             <div class="card-body">
-                            <h6 class="card-title">User Name</h6>
+                                <h6 class="card-title">User Name</h6>
                                 <p class="card-text">With supporting text below as a natural lead-in to additional
                                     content.
                                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam quod quas ut
@@ -93,8 +125,10 @@
             <div class="row">
                 <div class="col">
                     <form action="" method="get">
+                        <input class="d-none" type="text" name="post_id" value="1">
+                        <input class="d-none" type="text" name="user_id" value="1">
                         <div class="form-floating">
-                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" name="comment"
                                 style="height: 100px"></textarea>
                             <label for="floatingTextarea2">Comments</label>
                         </div>

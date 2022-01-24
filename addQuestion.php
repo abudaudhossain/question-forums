@@ -43,7 +43,34 @@
             </div>
         </div>
     </nav>
-
+    <section class="w-75 m-auto">
+        <div class="container m-5">
+          <h3 class="my-3">Add Question</h3>
+            <form action="">
+              <input class="d-none" type="text" name="user_id" value="1">
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="title">
+                        <label for="floatingInput">Title</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                            style="height: 100px" name="comment"></textarea>
+                        <label for="floatingTextarea2">Comments</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="tag">
+                        <label for="floatingInput">Tags</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
