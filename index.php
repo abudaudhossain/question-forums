@@ -1,3 +1,12 @@
+<?php 
+require 'connect.php';
+
+$sql = "SELECT * FROM `questions` WHERE 1";
+
+$result = $conn -> query($sql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,69 +56,24 @@
     <!-- ==========start all question sections ===========  -->
     <section class="w-75 m-auto">
         <div class="container">
+            <?php while($row = $result->fetch_assoc()){ ?>
+                
             <div class="row">
                 <div class="col">
                     <div class="card  my-4">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam quod quas ut delectus recusandae optio voluptas possimus pariatur fugit aliquid asperiores sed odio, a corporis incidunt maxime nihil, commodi quae?
+                            <h5 class="card-title"><?php echo $row['title'] ?></h5>
+                            <p class="card-text">
+                            <?php echo $row['description'] ?>
                             </p>
-                            <a href="/my_work_dir/php-crud-project/details.php?adat" class="btn btn-primary">Details</a>
+                            <a href="/my_work_dir/php-crud-project/details.php?id=<?php echo $row['id'] ?>" class="btn btn-primary">Details</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- no action  -->
-            <div class="row">
-                <div class="col">
-                    <div class="card  my-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam quod quas ut delectus recusandae optio voluptas possimus pariatur fugit aliquid asperiores sed odio, a corporis incidunt maxime nihil, commodi quae?
-                            </p>
-                            <a href="#" class="btn btn-primary">Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="card  my-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam quod quas ut delectus recusandae optio voluptas possimus pariatur fugit aliquid asperiores sed odio, a corporis incidunt maxime nihil, commodi quae?
-                            </p>
-                            <a href="#" class="btn btn-primary">Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="card  my-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam quod quas ut delectus recusandae optio voluptas possimus pariatur fugit aliquid asperiores sed odio, a corporis incidunt maxime nihil, commodi quae?
-                            </p>
-                            <a href="#" class="btn btn-primary">Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="card  my-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam quod quas ut delectus recusandae optio voluptas possimus pariatur fugit aliquid asperiores sed odio, a corporis incidunt maxime nihil, commodi quae?
-                            </p>
-                            <a href="#" class="btn btn-primary">Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-             <!-- no action  -->
+            <?php } ?>
+
         </div>
     </section>
     <!-- ==========end all question sections ===========  -->

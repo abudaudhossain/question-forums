@@ -1,12 +1,15 @@
 <?php 
-
+$id = $_GET["id"];
 require 'connect.php';
 
-$sql = "SELECT * FROM `questions` WHERE user_id = 1";
+$sql = "SELECT * FROM `questions` WHERE id = $id";
+
 
 $result = $conn -> query($sql);
+$question = $result -> fetch_assoc();
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,49 +55,31 @@ $result = $conn -> query($sql);
             </div>
         </div>
     </nav>
-
-
-    <!-- ==========start all question sections ===========  -->
     <section class="w-75 m-auto">
-        <?php if($_GET){?>
-        <div class="alert alert-danger" role="alert"> item deleted
-        </div>
-        <?php } ?>
-        <div class="container">
-
-            <?php while($row = $result->fetch_assoc()){ ?>
-
-
-
-            <div class="row">
-                <div class="col">
-                    <div class="card  my-4">
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $row['title'] ?></h5>
-                            <p class="card-text">
-                                <?php echo $row['description'] ?>
-                            </p>
-                            <a href="/my_work_dir/php-crud-project/details.php?id=<?php echo $row['id'] ?>"
-                                class="btn btn-primary">Details</a>
-
-                            <a href="/my_work_dir/php-crud-project/QueUpdate.php?id=<?php echo $row['id'] ?>"
-                                class="btn btn-success">Update</a>
-                            <a href="/my_work_dir/php-crud-project/delete.php?id=<?php echo $row['id'] ?>"
-                                onclick="return confirm('are you sure?')" class="btn btn-danger"> Delete</a>
-                        </div>
+        <div class="container m-5">
+            <h3 class="my-3">Update Question</h3>
+            <form action="update.php" method="POST">
+                <input class="d-none" type="text" name="id" value="<?php echo $id ?>">
+                <input class="d-none" type="text" name="user_id" value="1">
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com"
+                            name="title" value="<?php echo $question["title"];?>">
+                        <label for="floatingInput">Title</label>
                     </div>
                 </div>
-            </div>
-
-            <?php } ?>
-
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                            style="height: 100px" name="description" ><?php echo $question["description"];?></textarea>
+                        <label for="floatingTextarea2">Comments</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
     </section>
-    <!-- ==========end all question sections ===========  -->
 
-    <script>
-
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>

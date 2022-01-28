@@ -1,3 +1,17 @@
+<?php
+$id = $_GET["id"];
+require 'connect.php';
+
+$sql = "SELECT * FROM `questions` WHERE id = $id";
+
+$result = $conn -> query($sql);
+$question = $result -> fetch_assoc();
+
+$sql2 = "SELECT * FROM `answer` WHERE questions_id = $id";
+$answers = $conn -> query($sql2);
+ 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,18 +65,9 @@
                 <div class="col">
                     <div class="card  my-4">
                         <div class="card-body mb-4">
-                            <h5 class="card-title">Card title</h5>
+                            <h5 class="card-title"><?php echo $question["title"];?></h5>
                             <p class="card-text">
-                                With supporting text below as a natural lead-in to additional content.
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam quod quas ut delectus
-                                recusandae optio voluptas possimus pariatur fugit aliquid asperiores sed odio, a
-                                corporis incidunt maxime nihil, commodi quae?
-                                With supporting text below as a natural lead-in to additional content.
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam quod quas ut delectus
-                                recusandae optio voluptas possimus pariatur fugit aliquid asperiores sed odio, a
-                                corporis incidunt maxime nihil, commodi quae?
-
-
+                                <?php echo $question["description"];?>
                             </p>
                             <p class="card-text">
                                 With supporting text below as a natural lead-in to additional content.
@@ -91,20 +96,24 @@
 
                         </div>
                         <h3 class="m-3">Comments</h3>
+                        <?php while($answer = $answers -> fetch_assoc()){ ?>
                         <div class="card  ms-5 me-3 mb-2">
-
                             <div class="card-body">
-                                <h6 class="card-title">User Name</h6>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam quod quas ut
-                                    delectus
-                                    recusandae optio voluptas possimus pariatur fugit aliquid asperiores sed odio, a
-                                    corporis incidunt maxime nihil, commodi quae?
+                                <h6 class="card-title">
+                                    <?php
+                                $user_id = $answer['user_id'];
+                                $sql = "SELECT * FROM `users` WHERE user_id = '$user_id'";
+                                $user = $conn -> query($sql) ->fetch_assoc() ;
+                                echo $user["name"]
+                                ?>
+                                </h6>
+                                <p class="card-text">
+                                    <?php echo $answer['answer'] ?>
                                 </p>
 
                             </div>
                         </div>
+                        <?php }?>
                         <div class="card  ms-5 me-3 mb-2">
                             <div class="card-body">
                                 <h6 class="card-title">User Name</h6>
@@ -124,12 +133,12 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <form action="" method="get">
-                        <input class="d-none" type="text" name="post_id" value="1">
+                    <form action="store_answer.php" method="post">
+                        <input class="d-none" type="text" name="post_id" value="<?php echo $id ?>">
                         <input class="d-none" type="text" name="user_id" value="1">
                         <div class="form-floating">
-                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" name="comment"
-                                style="height: 100px"></textarea>
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                                name="comment" style="height: 100px"></textarea>
                             <label for="floatingTextarea2">Comments</label>
                         </div>
                         <button type="submit" class="btn btn-primary my-3">Comment</button>

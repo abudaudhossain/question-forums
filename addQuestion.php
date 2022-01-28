@@ -46,7 +46,7 @@
     <section class="w-75 m-auto">
         <div class="container m-5">
           <h3 class="my-3">Add Question</h3>
-            <form action="">
+            <form action="store.php" method="POST">
               <input class="d-none" type="text" name="user_id" value="1">
                 <div class="mb-3">
                     <div class="form-floating">
@@ -57,7 +57,7 @@
                 <div class="mb-3">
                     <div class="form-floating">
                         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
-                            style="height: 100px" name="comment"></textarea>
+                            style="height: 100px" name="description"></textarea>
                         <label for="floatingTextarea2">Comments</label>
                     </div>
                 </div>
